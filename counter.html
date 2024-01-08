@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+    <title>计数器</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="input-num">
+            <button @click="sub">-</button>
+            <span>{{ num }}</span>
+            <button @click="add">+</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!',
+                    num: 1
+                }
+            },
+            methods: {
+                add: function () {
+                    // console.log('add');
+                    if (this.num < 10) {
+                        this.num++;
+                    } else {
+                        alert('已是最大值');
+                    }
+                },
+                sub: function () {
+                    // console.log('sub');
+                    if (this.num > 0) {
+                        this.num--;
+                    } else {
+                        alert('已是最大值');
+                    }
+                }
+
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
